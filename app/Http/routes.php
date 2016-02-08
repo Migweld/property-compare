@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', array('uses' => 'CompareController@index'));
+
+Route::post('/compare', array('uses' => 'CompareController@compare'));
 
 /*
 |--------------------------------------------------------------------------

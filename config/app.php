@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://properties.local',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,6 +155,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\PropertySearchProvider::class,
+        App\Providers\SearchAPIProvider::class,
 
     ],
 
