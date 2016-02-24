@@ -40,6 +40,10 @@ class ZooplaSearch implements SearchAPIContract
             ]
         ]);
 
-        return json_decode($response->getBody()->getContents());
+        if($response->getStatusCode() == 200){
+            return json_decode($response->getBody()->getContents());
+        } else {
+            return false;
+        }
     }
 }

@@ -2,6 +2,10 @@
 
 @section('content')
 
+@if(Session::get('message'))
+	<p>{{Session::get('message')}}</p>
+@endif
+
 <form action="/compare" method="POST">
 	<label for="bedrooms">Number of Bedrooms</label>
 	<select name="bedrooms" id="bedrooms">

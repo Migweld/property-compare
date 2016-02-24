@@ -25,6 +25,10 @@ class PropertySearch implements PropertyCompareContract
         $search = new ZooplaSearch;
         $response = $search->callAPI($bedrooms, $propertyType, $saleRent, $town, $radius);
 
+        if($response == false) {
+            return false;
+        }
+
         $chunks = array_slice($response->listing, 10, count($response->listing));
 
         $listing = $chunks[rand(0, count($chunks))];
