@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Services\Contracts\PropertyCompareContract;
 use App\Services\SearchAPIContract;
+use GuzzleHttp\Exception\BadResponseException;
 
 /**
  * summary
@@ -22,17 +23,24 @@ class PropertySearch implements PropertyCompareContract
 
     private function searchAPI($propertyType, $bedrooms, $saleRent, $town, $radius)
     {
-        $search = new ZooplaSearch;
-        $response = $search->callAPI($bedrooms, $propertyType, $saleRent, $town, $radius);
+        try {
+            $search = new ZooplaSearch;
+            $response = $search->callAPI($bedrooms, $propertyType, $saleRent, $town, $radius);
 
-        if($response == false) {
-            return false;
+            if($response == false) {
+                return false;
+            }
+
+            if(count($response->listing <= 10)){
+                $listing = $response->listing[rand(0, count($response->listing))];
+            } else {
+                $chunks = array_slice($response->listing, 10, count($response->listing));
+                $listing = $chunks[rand(0, count($chunks))];
+            }
+
+            return $listing;
+        } catch(BadResponseException $e) {
+            return $e;
         }
-
-        $chunks = array_slice($response->listing, 10, count($response->listing));
-
-        $listing = $chunks[rand(0, count($chunks))];
-
-        return $listing;
     }
 }
