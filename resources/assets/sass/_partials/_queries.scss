@@ -1,0 +1,256 @@
+
+/*------------------------------------*\
+	$MEDIA QUERIES
+\*------------------------------------*/
+
+
+
+
+
+@media screen and (min-width: $bp-small) {
+	
+
+	.siteHeader{
+
+		h1{
+			font-size: calc-em(24px);
+			padding-top: 110px;
+			margin-bottom: 110px;
+		}
+	}
+
+	.bg-text{
+		font-size: calc-em(150px);
+	}
+	
+	.leeds{
+		display: block;
+		right: 6px;
+		margin-bottom: -100px;
+		&:before{
+			
+			width: 400px;
+			height: 160px;
+			border: 2px solid $color-purple;
+			position: absolute;
+			top: 2px;
+			left: 100px;
+		}
+	}
+
+	.london{
+		top: 300px;
+		left: 60px;
+		&:before{
+			width: 300px;
+			height: 372px;
+			border: 2px solid $color-mint;
+			top: -40px;
+			left: 183px;
+		}
+	}
+
+
+
+	.box{
+		padding: 50px 50px 30px 50px;
+	}
+
+	select{
+		font-size: calc-em(24px);
+		margin-bottom: calc-em(37px);
+	}
+
+
+	.result--leeds{
+		.bg-text{
+			margin-bottom: -100px;
+			
+		}
+
+		.box{
+			left: 0;
+		}
+	}
+
+	.result--london{
+		.bg-text{
+			margin-bottom: -100px;
+		}
+
+		.box{
+			right: 0;
+		}
+	}
+
+	.leeds-is-ace{
+		.bg-text{
+			margin-bottom: -100px;
+		}
+	}
+
+	.address{
+		font-size: calc-em(24px);
+	}
+
+	.price{
+		font-size: calc-em(36px);
+		
+	}
+
+	.result{
+		.image{
+			width: 230px;
+			height: 230px;
+			margin: 0 auto 50px auto;
+		}
+	}
+
+	.result{
+		margin: 0 auto;
+		position: relative;
+	}
+
+}
+
+@media screen and (min-width: $bp-medium) {
+	
+	.leeds-is-ace{
+		margin: 0 auto;
+		position: relative;
+		max-width: 700px;
+		.box{
+			margin: 0 30px;
+			
+
+		}
+	}
+
+	.box{
+		margin: 0;
+	}
+
+	.search-form{
+		.cta-btn{
+			margin: 38px 0 0 0px;
+		}
+	}
+
+	.london{
+		top: 380px;
+		left: 380px;
+	}
+
+	footer{
+		padding: 330px 50px 100px 50px;
+	}
+}
+
+@media screen and (min-width: $bp-large) {
+
+	.box{
+
+	box-shadow: 0px 40px 70px 0px rgba(0,0,0,0.28);
+	}
+
+	.result{
+		width: 50%;
+		float: left;
+		max-width: none;
+		text-align: center;
+		.box{
+			max-width: 400px;
+			margin: 0 auto;
+		}
+	}
+
+
+	.result--leeds{
+		.bg-text{
+			margin-bottom: -80px;
+			left: -50px;
+			
+		}
+		
+		.cta-btn{
+			left: 0;
+			margin-top: 25px;
+		}
+
+		&:before{
+			width: 310px;
+			height: 494px;
+			border: 2px solid $color-purple;
+			top: 240px;
+			left: -50px;
+		}
+
+		
+	}
+
+	.result--london{
+		margin-top: 30px;
+		.bg-text{
+			margin-bottom: -90px;
+		}
+
+		.cta-btn{
+			left: 0;
+			margin-top: 25px;
+		}
+
+		&:before{
+			width: 390px;
+			height: 330px;
+			border: 2px solid $color-mint;
+			top: 390px;
+			left: 260px;
+		}
+	}
+
+	.leeds-is-ace{
+		&:before{
+			width: 310px;
+			height: 460px;
+			border: 2px solid $color-purple;
+			top: 70px;
+			left: 390px;
+		}
+		.bg-text{
+			margin-bottom: -75px;
+		}
+
+		.box{
+		
+			p{
+				
+				font-size: calc-em(24px);
+				margin-bottom: 10px;
+			}
+		}
+
+	}
+
+	.cash{
+		font-size: calc-em(72px);
+	}
+
+	.quip{
+		padding: 121px 120px 150px 50px;
+    	text-align: left;
+    	position: relative;
+    	left: 310px;
+	}
+
+	.again{
+		.section-text{
+			text-align: left;
+			margin-bottom: 100px;
+			padding-left: 150px;
+		}
+	}
+
+
+
+
+}

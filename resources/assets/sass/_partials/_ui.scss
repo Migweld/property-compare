@@ -1,0 +1,345 @@
+body{
+	height: 0;
+	background: $color-bg-grey;
+}
+
+.pageContainer{
+	// z-index: 1;
+	position: relative;
+	overflow: hidden;
+	right: 0;
+	transition-duration: .3s;
+	&.navOpen{
+		right: 200px;
+	}
+}
+
+// Site Header-----------------------------------------------------------
+
+.siteHeader{
+
+	h1{
+		text-transform: uppercase;
+		font-size: calc-em(16px);
+		color: $color-gray-dark;
+		letter-spacing: 5px;
+		text-align: center;
+		padding-top: 30px;
+		margin-bottom: 40px;
+	}
+}
+
+.bg-text{
+	text-transform: uppercase;
+	font-size: calc-em(70px);
+	font-weight: bold;
+	position: relative;
+}
+
+.leeds{
+	display: block;
+	right: 6px;
+	margin-bottom: -45px;
+	&:before{
+		content: "";
+		display: block;
+		width: 180px;
+		height: 71px;
+		border: 1px solid $color-purple;
+		position: absolute;
+		top: 2px;
+		left: 100px;
+	}
+}
+
+.london{
+	display: block;
+	position: absolute;
+	height: 190px;
+	top: 250px;
+	left: 44px;
+	&:before{
+		content: "";
+		display: block;
+		width: 140px;
+		height: 150px;
+		border: 1px solid $color-mint;
+		position: absolute;
+		top: 40px;
+		left: 80px;
+	}
+}
+
+.purple{
+	color: $color-purple;
+}
+
+.mint{
+	color: $color-mint;
+}
+
+
+
+.box{
+	/* Rectangle 2: */
+	background: rgba(255,255,255,0.90);
+	box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.28);
+	margin: 0 30px;
+	padding: 30px;
+	z-index: 9999;
+	position: relative;
+}
+
+.search-form{
+	z-index: 9999;
+	position: relative;
+	max-width: 500px;
+	margin: 0px auto;
+	.cta-btn{
+		margin: 38px 0 0 30px;
+		box-shadow: 0px 22px 44px 0px rgba(0,0,0,0.30);
+		padding-top: 0;
+	}
+}
+
+.cta-btn{
+	font-family: $font-primary;
+	text-transform: uppercase;
+	color: #fff;
+	background: $color-mint;
+	font-size: calc-em(18px);
+	letter-spacing: 6px;
+	border-bottom: 0;
+	width: 150px;
+	height: 50px;
+	padding: 0;
+	cursor: pointer;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    transform: scale(1);
+  	text-decoration: none;
+  	display: inline-block;
+  	padding-top: 13px;
+  	text-align: center;
+	&:hover{
+		transform: scale(1.05);
+		text-decoration: none;
+		color: #fff;
+	}
+}
+
+.btn-lg{
+	width: 272px;
+	height: 90px;
+	padding-top: 32px;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	&:before{
+		content: "";
+		display: block;
+		width: 300px;
+		height: 102px;
+		position: absolute;
+		bottom: 10px;
+		left: 20px;
+		border: 2px solid $color-mint;
+	}
+}
+
+
+.cta-btn__purple{
+	background: $color-purple;
+}
+
+
+
+// Results--------------------------------
+
+.result--leeds{
+	.bg-text{
+		margin-bottom: -40px;
+		display: block;
+	}
+
+	.box{
+		left: 15px;
+	}
+
+	.cta-btn{
+		position: relative;
+		left: 45px;
+		margin-top: 15px;
+	}
+
+	&:before{
+		content: "";
+		display: block;
+		width: 180px;
+		height: 305px;
+		border: 1px solid $color-purple;
+		position: absolute;
+		top: 150px;
+		left: -30px;
+	}
+}
+
+
+.result--london{
+	margin-top: 30px;
+	position: relative;
+	.bg-text{
+		margin-bottom: -40px;
+		left: 24px;
+		display: block;
+	}
+
+
+	.box{
+		right: 15px;
+	}
+
+	.cta-btn{
+		position: relative;
+		left: 15px;
+		margin-top: 15px;
+	}
+
+	&:before{
+		content: "";
+		display: block;
+		width: 180px;
+		height: 305px;
+		border: 1px solid $color-mint;
+		position: absolute;
+		top: 150px;
+		left: 132px;
+	}
+}
+
+
+.results{
+	margin-bottom: 50px;
+
+	.box{
+		text-align: center;
+	}
+}
+
+.result{
+	max-width: 400px;
+
+	.image{
+		width: 115px;
+		height: 115px;
+		border-radius: 50%;
+		background-size: cover;
+		background-position: center;
+		margin: 0 auto 30px auto;
+
+
+	}
+}
+
+.purple{
+	.image{
+		border: 2px solid $color-purple;
+	}
+}
+
+.mint{
+	.image{
+		border: 2px solid $color-mint;
+	}
+}
+
+.address{
+	font-family: $font-secondary;
+	font-size: calc-em(14px);
+}
+
+.price{
+	font-size: calc-em(24px);
+	font-weight: bold;
+}
+
+
+.section-text{
+	text-transform: uppercase;
+	font-size: calc-em(16px);
+	color: $color-gray-dark;
+	letter-spacing: 5px;
+	text-align: center;
+	padding-top: 30px;
+	margin-bottom: 40px;
+}
+
+.quip{
+	padding: 60px 50px 60px 50px;
+	font-size: calc-em(14px);
+	color: $color-gray-light;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-align: center;
+	
+}
+
+
+.leeds-is-ace{
+	position: relative;
+	&:before{
+		content: "";
+		display: block;
+		width: 180px;
+		height: 233px;
+		border: 1px solid $color-purple;
+		position: absolute;
+		top: 100px;
+		left: 132px;
+	}
+	.bg-text{
+		margin-bottom: -40px;
+		// left: 24px;
+		display: block;
+	}
+
+	.box{
+		text-align: center;
+		p{
+			font-family: $font-secondary;
+			font-size: calc-em(16px);
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.cash{
+	font-size: calc-em(36px);
+	font-weight: bold;
+	color: $color-purple;
+}
+
+
+footer{
+	padding: 100px 50px;
+	text-align: center;
+	text-transform: uppercase;
+	color: $color-gray-light;
+	font-size: calc-em(14px);
+	a{
+		color: $color-gray-light;
+		text-decoration: none;
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		letter-spacing: 6px;
+		li{
+			margin-bottom: 30px;
+		}
+	}
+}

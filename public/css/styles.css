@@ -1,0 +1,1432 @@
+/**
+ * @section CSS Reset
+ * Meyer's CSS Reset, Normalized.css, and custom code.
+ * @link http://meyerweb.com/eric/tools/css/reset/
+ * @link http://necolas.github.io/normalize.css/
+ */
+/**
+ * Mobile screen resizing
+ * @link http://dev.w3.org/csswg/css-device-adapt/
+ */
+@-webkit-viewport {
+  width: device-width;
+  zoom: 1.0; }
+@-moz-viewport {
+  width: device-width;
+  zoom: 1.0; }
+@-ms-viewport {
+  width: device-width;
+  zoom: 1.0; }
+@-o-viewport {
+  width: device-width;
+  zoom: 1.0; }
+@viewport {
+  width: device-width;
+  zoom: 1.0; }
+/**
+ * Remove browser defaults
+ */
+/* line 22, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+button, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "brandon-grotesque", "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/**
+ * Add box sizing to everything
+ * @link http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+/* line 48, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+/**
+ * Set display type for HTML5 semantic elements
+ */
+/* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/**
+ * Force scrollbar display to prevent jumping on pages.
+ * Fix text resize bug on mobile devices.
+ */
+/* line 66, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/**
+ * Display audio, canvas, and video elements as inline block elements.
+ */
+/* line 75, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying audio without controls.
+ */
+/* line 84, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Prevent img and video elements from spilling outside of the page on smaller screens.
+ */
+/* line 92, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+img,
+video {
+  max-width: 100%;
+  height: auto; }
+
+/**
+ * Prevent iframe, object, and embed elements from spilling outside of the page on smaller screens.
+ */
+/* line 101, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+iframe,
+object,
+embed {
+  max-width: 100%; }
+
+/**
+ * Hide the template element in IE, Safari, and Firefox < 22.
+ */
+/* line 110, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+template {
+  display: none;
+  visibility: hidden; }
+
+/**
+ * Prevents IE from making scaled images look like crap
+ */
+/* line 118, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+img {
+  -ms-interpolation-mode: bicubic; }
+
+/**
+ * Address outline inconsistency between Chrome and other browsers.
+ */
+/* line 125, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+a:focus,
+button:focus {
+  outline: thin dotted;
+  outline: 0.3125rem auto -webkit-focus-ring-color;
+  outline-offset: -0.15625rem; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 135, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_reset.scss */
+a:hover,
+a:active {
+  outline: 0; }
+
+/**
+ * @section Grid
+ * Structure and layout
+ */
+/**
+ * Base grid styles: single column
+ */
+/* line 10, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 17, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+.row {
+  margin-left: -1.4%;
+  margin-right: -1.4%; }
+
+/* line 22, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+.grid-fourth, .grid-third, .grid-half, .grid-two-thirds, .grid-three-fourths, .grid-full {
+  float: left;
+  width: 100%;
+  padding-left: 1.4%;
+  padding-right: 1.4%; }
+
+/**
+ * Reverses order of grid for content choreography
+ */
+/* line 39, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+.grid-flip {
+  float: right; }
+
+/**
+ * Add columns to grid on bigger screens
+ */
+@media (min-width: 20em) {
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-fourth {
+    width: 25%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-third {
+    width: 33.33333%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-half {
+    width: 50%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-two-thirds {
+    width: 66.66667%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-three-fourths {
+    width: 75%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-xsmall .grid-full {
+    width: 100%; } }
+@media (min-width: 30em) {
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-fourth {
+    width: 25%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-third {
+    width: 33.33333%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-half {
+    width: 50%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-two-thirds {
+    width: 66.66667%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-three-fourths {
+    width: 75%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .row-start-small .grid-full {
+    width: 100%; } }
+@media (min-width: 40em) {
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-fourth {
+    width: 25%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-third {
+    width: 33.33333%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-half {
+    width: 50%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-two-thirds {
+    width: 66.66667%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-three-fourths {
+    width: 75%; }
+
+  /* line 50, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-full {
+    width: 100%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-fourth {
+    margin-left: 25%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-third {
+    margin-left: 33.33333%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-half {
+    margin-left: 50%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-two-thirds {
+    margin-left: 66.66667%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-three-fourths {
+    margin-left: 75%; }
+
+  /* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .offset-full {
+    margin-left: 100%; } }
+/**
+ * Image gallery
+ */
+@media (min-width: 20em) {
+  /* line 68, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-img {
+    width: 50%; } }
+@media (min-width: 30em) {
+  /* line 68, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-img {
+    width: 33.33333333333%; } }
+@media (min-width: 40em) {
+  /* line 68, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_grid.scss */
+  .grid-img {
+    width: 25%; } }
+
+/* Add clearfix */
+/**
+ * @section Typography
+ * Sets font styles for entire site
+ */
+/* line 7, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+body {
+  font-family: "brandon-grotesque", "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #272727;
+  background: #ffffff; }
+  @media (min-width: 40em) {
+    /* line 7, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+    body {
+      line-height: 1.5625; } }
+  @media (min-width: 80em) {
+    /* line 7, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+    body {
+      font-size: 125%; } }
+
+/* line 25, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+p {
+  margin-bottom: 1.5625em; }
+
+/**
+ * Sizes for smaller and larger text
+ */
+/* line 34, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+.text-small {
+  font-size: 0.9375rem; }
+
+/* line 38, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+.text-tall {
+  font-size: 1.1875rem;
+  line-height: 1.4; }
+
+@media (min-width: 40em) {
+  /* line 44, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+  .text-tall {
+    font-size: 1.3125rem; } }
+/**
+ * Alternate text colors
+ */
+/* line 54, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+.text-muted {
+  color: #383838; }
+
+/**
+ * Hyperlink styling
+ */
+/* line 65, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+a:hover,
+a:focus,
+a:active {
+  color: #005580;
+  text-decoration: underline; }
+
+/* line 72, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+a img {
+  border: none;
+  background: none; }
+
+/**
+ * Prevents border/background on linked image hover.
+ * Adds slight opacity.
+ */
+/* line 81, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+a:hover img {
+  border: none;
+  background: none;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+/**
+ * List styling
+ */
+/* line 93, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+ul,
+ol,
+dl {
+  margin-bottom: 1.5625em;
+  margin-left: 2rem; }
+
+/* line 100, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0; }
+
+/* line 107, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+ul {
+  list-style: disc; }
+
+/* line 111, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+ol {
+  list-style: decimal; }
+
+/* line 115, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+dl {
+  margin-left: 0; }
+
+/* line 119, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+dt {
+  font-weight: bold; }
+
+/**
+ * Removes list styling.
+ * For semantic reasons, should only be used on unordered lists.
+ */
+/* line 127, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+.list-unstyled {
+  margin-left: 0;
+  list-style: none; }
+
+/**
+ * Heading styling for h1 through h6 elements.
+ * Heading class lets you use one heading type for semantics, but style it as another heading type.
+ */
+/* line 138, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: normal;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  word-wrap: break-word; }
+
+/* line 146, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h1,
+.h1 {
+  font-size: 1.5rem;
+  padding-top: .5em; }
+
+/* line 152, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h2,
+.h2 {
+  font-size: 1.3125rem; }
+
+/* line 157, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h3,
+.h3 {
+  font-size: 1.1875rem; }
+
+/* line 162, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h4, h5, h6,
+.h4, .h5, .h6 {
+  font-size: 0.9375rem; }
+
+/* line 167, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+h4,
+.h4 {
+  text-transform: uppercase; }
+
+@media (min-width: 40em) {
+  /* line 173, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+  h1,
+  .h1 {
+    font-size: 1.75rem; } }
+/**
+ * Lines, Quotes and Emphasis
+ */
+/* line 184, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+hr {
+  margin: 2rem auto;
+  border: 0;
+  border-top: 0.0725rem solid #767676;
+  border-bottom: 0 solid #ffffff; }
+
+/* line 191, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+strong {
+  font-weight: bold; }
+
+/* line 195, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+em {
+  font-style: italic; }
+
+/* line 199, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+sub,
+sup {
+  position: relative;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 0;
+  vertical-align: baseline;
+  margin-left: 0.25rem; }
+
+/* line 209, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+sup {
+  top: -0.5rem; }
+
+/* line 213, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+sub {
+  bottom: -0.25rem; }
+
+/**
+ * Highlighting colors
+ */
+/* line 220, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+::selection {
+  color: #ffffff;
+  background: #0088cc; }
+
+/* line 225, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+::-moz-selection {
+  color: #ffffff;
+  background: #0088cc; }
+
+/**
+ * Blockquotes
+ */
+/* line 234, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+blockquote {
+  border-left: 0.25rem solid #767676;
+  margin-bottom: 1.5625em;
+  padding-left: 1.5625em;
+  padding-right: 1.5625em; }
+
+/* line 241, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 245, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_typography.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/**
+ * @section Code
+ * Styling for code and preformatted text.
+ */
+/* line 7, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_code.scss */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 0.875rem;
+  border-radius: 0.0725rem; }
+
+/* line 14, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_code.scss */
+code {
+  color: #dd1144;
+  background-color: #888888;
+  padding: 0.25rem; }
+
+/* line 20, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_code.scss */
+pre {
+  display: block;
+  margin-bottom: 1.5625em;
+  line-height: 1.5;
+  background-color: #858585;
+  padding: 0.8125rem;
+  tab-size: 4;
+  white-space: pre-wrap;
+  word-break: break-all; }
+
+/* line 31, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_code.scss */
+pre code {
+  font-size: 1em;
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0; }
+
+/**
+ * @section Buttons
+ * Styling for CSS buttons.
+ */
+/* line 9, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn,
+.btn:visited,
+a .btn:visited,
+.btn:hover,
+a .btn:hover,
+.btn:focus,
+a .btn:focus,
+.btn:active,
+a .btn:active,
+.btn.active {
+  color: #ffffff; }
+
+/* line 24, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn-secondary {
+  background-color: #383838;
+  border-color: #383838; }
+
+/* line 29, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn-secondary:hover,
+a .btn-secondary:hover,
+.btn-secondary:focus,
+a .btn-secondary:focus,
+.btn-secondary:active,
+a .btn-secondary:active,
+.btn-secondary.active {
+  background-color: #121212;
+  border-color: #121212; }
+
+/* line 40, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn:active,
+.btn.active {
+  box-shadow: inset 0 0.15625rem 0.25rem rgba(0, 0, 0, 0.15), 0 0.0725rem 0.15625rem rgba(0, 0, 0, 0.05);
+  outline: 0; }
+
+/* line 46, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn.disabled,
+.btn[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  box-shadow: none; }
+
+/* line 55, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn-large {
+  padding: 0.6875rem 0.9375rem;
+  font-size: 1em;
+  line-height: normal; }
+
+/* line 61, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn-block,
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0; }
+
+/* line 72, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+button,
+.btn {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  /**
+   * @workaround Override default button styling
+   * @affected Webkit/Firefox
+   */
+  background-image: none;
+  -webkit-appearance: none; }
+
+/* line 85, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_buttons.scss */
+.btn:last-child,
+input.btn {
+  margin-right: 0; }
+
+/**
+ * @section Forms
+ * Styling for form elements.
+ */
+/* line 7, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+form,
+fieldset {
+  margin-bottom: 1.5625em; }
+
+/* line 12, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+legend,
+label {
+  display: block;
+  font-weight: normal;
+  padding: 0;
+  margin-bottom: 0.3125rem; }
+
+/* line 20, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem;
+  color: #383838;
+  margin-bottom: 1.5625rem;
+  padding: 0 0 0.75rem 0;
+  border: none;
+  border-bottom: 0.0725rem solid #383838;
+  border-radius: 0rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none; }
+  @media (min-width: 40em) {
+    /* line 20, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+    input,
+    textarea,
+    select {
+      line-height: 1.5625; } }
+  /* line 41, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none; }
+
+/* line 48, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+form button,
+form .button {
+  margin-bottom: 1.1875rem; }
+
+/* line 53, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+textarea {
+  height: 12em; }
+
+/* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-bottom: 0.3125rem;
+  cursor: pointer; }
+
+/**
+ * Inline inputs
+ */
+/* line 88, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+.input-inline {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle; }
+
+/**
+ * Condensed inputs
+ */
+/* line 98, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_forms.scss */
+.input-condensed {
+  padding: 0.0725rem 0.3125rem;
+  font-size: 0.9375rem; }
+
+/* line 1, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+body {
+  height: 0;
+  background: #F1F1F1; }
+
+/* line 6, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.pageContainer {
+  position: relative;
+  overflow: hidden;
+  right: 0;
+  transition-duration: .3s; }
+  /* line 12, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .pageContainer.navOpen {
+    right: 200px; }
+
+/* line 21, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.siteHeader h1 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #383838;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 40px; }
+
+/* line 32, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.bg-text {
+  text-transform: uppercase;
+  font-size: 4.375rem;
+  font-weight: bold;
+  position: relative; }
+
+/* line 39, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.leeds {
+  display: block;
+  right: 6px;
+  margin-bottom: -45px; }
+  /* line 43, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .leeds:before {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 71px;
+    border: 1px solid #9013FE;
+    position: absolute;
+    top: 2px;
+    left: 100px; }
+
+/* line 55, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.london {
+  display: block;
+  position: absolute;
+  height: 190px;
+  top: 250px;
+  left: 44px; }
+  /* line 61, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .london:before {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 150px;
+    border: 1px solid #50E3C2;
+    position: absolute;
+    top: 40px;
+    left: 80px; }
+
+/* line 73, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.purple {
+  color: #9013FE; }
+
+/* line 77, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.mint {
+  color: #50E3C2; }
+
+/* line 83, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.box {
+  /* Rectangle 2: */
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.28);
+  margin: 0 30px;
+  padding: 30px;
+  z-index: 9999;
+  position: relative; }
+
+/* line 93, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.search-form {
+  z-index: 9999;
+  position: relative;
+  max-width: 500px;
+  margin: 0px auto; }
+  /* line 98, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .search-form .cta-btn {
+    margin: 38px 0 0 30px;
+    box-shadow: 0px 22px 44px 0px rgba(0, 0, 0, 0.3);
+    padding-top: 0; }
+
+/* line 105, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.cta-btn {
+  font-family: "brandon-grotesque", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background: #50E3C2;
+  font-size: 1.125rem;
+  letter-spacing: 6px;
+  border-bottom: 0;
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  transform: scale(1);
+  text-decoration: none;
+  display: inline-block;
+  padding-top: 13px;
+  text-align: center; }
+  /* line 128, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .cta-btn:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: #fff; }
+
+/* line 135, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.btn-lg {
+  width: 272px;
+  height: 90px;
+  padding-top: 32px;
+  margin: 0 auto;
+  display: block;
+  position: relative; }
+  /* line 142, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .btn-lg:before {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 102px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    border: 2px solid #50E3C2; }
+
+/* line 155, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.cta-btn__purple {
+  background: #9013FE; }
+
+/* line 164, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result--leeds .bg-text {
+  margin-bottom: -40px;
+  display: block; }
+/* line 169, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result--leeds .box {
+  left: 15px; }
+/* line 173, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result--leeds .cta-btn {
+  position: relative;
+  left: 45px;
+  margin-top: 15px; }
+/* line 179, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result--leeds:before {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 305px;
+  border: 1px solid #9013FE;
+  position: absolute;
+  top: 150px;
+  left: -30px; }
+
+/* line 192, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result--london {
+  margin-top: 30px;
+  position: relative; }
+  /* line 195, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .result--london .bg-text {
+    margin-bottom: -40px;
+    left: 24px;
+    display: block; }
+  /* line 202, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .result--london .box {
+    right: 15px; }
+  /* line 206, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .result--london .cta-btn {
+    position: relative;
+    left: 15px;
+    margin-top: 15px; }
+  /* line 212, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .result--london:before {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 305px;
+    border: 1px solid #50E3C2;
+    position: absolute;
+    top: 150px;
+    left: 132px; }
+
+/* line 225, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.results {
+  margin-bottom: 50px; }
+  /* line 228, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .results .box {
+    text-align: center; }
+
+/* line 233, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.result {
+  max-width: 400px; }
+  /* line 236, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .result .image {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 30px auto; }
+
+/* line 249, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.purple .image {
+  border: 2px solid #9013FE; }
+
+/* line 255, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.mint .image {
+  border: 2px solid #50E3C2; }
+
+/* line 260, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.address {
+  font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem; }
+
+/* line 265, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.price {
+  font-size: 1.5rem;
+  font-weight: bold; }
+
+/* line 271, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.section-text {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #383838;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 40px; }
+
+/* line 281, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.quip {
+  padding: 60px 50px 60px 50px;
+  font-size: 0.875rem;
+  color: #767676;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center; }
+
+/* line 292, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.leeds-is-ace {
+  position: relative; }
+  /* line 294, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .leeds-is-ace:before {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 233px;
+    border: 1px solid #9013FE;
+    position: absolute;
+    top: 100px;
+    left: 132px; }
+  /* line 304, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .leeds-is-ace .bg-text {
+    margin-bottom: -40px;
+    display: block; }
+  /* line 310, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  .leeds-is-ace .box {
+    text-align: center; }
+    /* line 312, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+    .leeds-is-ace .box p {
+      font-family: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      margin-bottom: 10px; }
+
+/* line 320, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+.cash {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #9013FE; }
+
+/* line 327, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+footer {
+  padding: 100px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #767676;
+  font-size: 0.875rem; }
+  /* line 333, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  footer a {
+    color: #767676;
+    text-decoration: none; }
+  /* line 337, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+  footer ul {
+    list-style: none;
+    margin: 0;
+    letter-spacing: 6px; }
+    /* line 341, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_ui.scss */
+    footer ul li {
+      margin-bottom: 30px; }
+
+/**
+ * @section Alignment, Spacing, & Visibility
+ * Override defaults.
+ */
+/**
+ * Text alignment
+ */
+/* line 11, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.text-center {
+  text-align: center; }
+
+/* line 15, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.text-right {
+  text-align: right; }
+
+/* line 19, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.text-left {
+  text-align: left; }
+
+/**
+ * Floats
+ */
+/* line 28, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.float-left {
+  float: left; }
+
+/* line 32, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.float-center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 38, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.float-right {
+  float: right; }
+
+/**
+ * Spacing
+ */
+/* line 47, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.no-space {
+  margin: 0;
+  padding: 0; }
+
+/* line 52, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.no-space-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+/* line 57, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.no-space-top {
+  margin-top: 0;
+  padding-top: 0; }
+
+/* line 62, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.space-bottom {
+  margin-bottom: 2rem; }
+
+/* line 66, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.space-bottom-small {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0; }
+
+/* line 71, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.space-top {
+  padding-top: 0.8125rem; }
+
+/**
+ * Visibility
+ */
+/* line 80, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.screen-reader {
+  position: absolute;
+  top: -9999em;
+  left: -9999em; }
+
+/**
+ * @workaround
+ * @affected IE 8/9/10
+ */
+/* line 90, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+[hidden] {
+  display: none;
+  visibility: hidden; }
+
+/**
+ * Clearfix
+ */
+/* line 100, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.group:before, .container:before,
+.row:before,
+.cf:before,
+.group:after,
+.container:after,
+.row:after,
+.cf:after {
+  display: table;
+  content: ""; }
+
+/* line 106, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+.group:after, .container:after,
+.row:after,
+.cf:after {
+  clear: both; }
+
+@media (min-width: 40em) {
+  /* line 112, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+  .grid-fourth {
+    width: 50%; }
+
+  /* line 115, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+  .offset-three-fourths {
+    width: 25%; } }
+@media (min-width: 60em) {
+  /* line 121, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_overrides.scss */
+  .grid-fourth {
+    width: 25%; } }
+/**
+ * @section Print
+ * Styling for printed content. Adapted from HTML5BP.
+ * @link http://html5boilerplate.com
+ */
+@media print {
+  /**
+   * Universal selector.
+   * Reset all content to transparent background, black color, and remove box and text shadows.
+   */
+  /* line 14, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  /**
+   * Specifies page margin
+   */
+  @page {
+    margin: 0.5cm; }
+  /**
+   * Underline all links
+   */
+  /* line 31, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  /**
+   * Show URL after links
+   */
+  /* line 39, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  /**
+   * Don't show URL for internal links
+   */
+  /* line 46, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  a[href^="#"]:after {
+    content: ""; }
+
+  /**
+   * Specifies the minimum number of lines to print at the top and bottom of a page.
+   */
+  /* line 53, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  p,
+  h1, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  /**
+   * Avoid inserting a page break after headers
+   */
+  /* line 62, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  h1, h2, h3 {
+    page-break-after: avoid; }
+
+  /**
+   * Change border color on blockquotes and preformatted text.
+   * Avoid page breaks inside the content
+   */
+  /* line 70, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  pre,
+  blockquote {
+    border-color: #999;
+    page-break-inside: avoid; }
+
+  /**
+   * Displayed as a table header row group
+   */
+  /* line 79, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  thead {
+    display: table-header-group; }
+
+  /**
+   * Avoid inserting a page break inside table rows and images
+   */
+  /* line 86, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid; } }
+/*------------------------------------*\
+	$MEDIA QUERIES
+\*------------------------------------*/
+@media screen and (min-width: 30em) {
+  /* line 16, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .siteHeader h1 {
+    font-size: 1.5rem;
+    padding-top: 110px;
+    margin-bottom: 110px; }
+
+  /* line 23, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .bg-text {
+    font-size: 9.375rem; }
+
+  /* line 27, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds {
+    display: block;
+    right: 6px;
+    margin-bottom: -100px; }
+    /* line 31, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .leeds:before {
+      width: 400px;
+      height: 160px;
+      border: 2px solid #9013FE;
+      position: absolute;
+      top: 2px;
+      left: 100px; }
+
+  /* line 42, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .london {
+    top: 300px;
+    left: 60px; }
+    /* line 45, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .london:before {
+      width: 300px;
+      height: 372px;
+      border: 2px solid #50E3C2;
+      top: -40px;
+      left: 183px; }
+
+  /* line 56, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .box {
+    padding: 50px 50px 30px 50px; }
+
+  /* line 60, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  select {
+    font-size: 1.5rem;
+    margin-bottom: 2.3125rem; }
+
+  /* line 67, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--leeds .bg-text {
+    margin-bottom: -100px; }
+  /* line 72, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--leeds .box {
+    left: 0; }
+
+  /* line 78, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--london .bg-text {
+    margin-bottom: -100px; }
+  /* line 82, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--london .box {
+    right: 0; }
+
+  /* line 88, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds-is-ace .bg-text {
+    margin-bottom: -100px; }
+
+  /* line 93, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .address {
+    font-size: 1.5rem; }
+
+  /* line 97, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .price {
+    font-size: 2.25rem; }
+
+  /* line 103, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result .image {
+    width: 230px;
+    height: 230px;
+    margin: 0 auto 50px auto; }
+
+  /* line 110, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result {
+    margin: 0 auto;
+    position: relative; } }
+@media screen and (min-width: 40em) {
+  /* line 119, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds-is-ace {
+    margin: 0 auto;
+    position: relative;
+    max-width: 700px; }
+    /* line 123, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .leeds-is-ace .box {
+      margin: 0 30px; }
+
+  /* line 130, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .box {
+    margin: 0; }
+
+  /* line 135, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .search-form .cta-btn {
+    margin: 38px 0 0 0px; }
+
+  /* line 140, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .london {
+    top: 380px;
+    left: 380px; }
+
+  /* line 145, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  footer {
+    padding: 330px 50px 100px 50px; } }
+@media screen and (min-width: 60em) {
+  /* line 152, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .box {
+    box-shadow: 0px 40px 70px 0px rgba(0, 0, 0, 0.28); }
+
+  /* line 157, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result {
+    width: 50%;
+    float: left;
+    max-width: none;
+    text-align: center; }
+    /* line 162, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .result .box {
+      max-width: 400px;
+      margin: 0 auto; }
+
+  /* line 170, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--leeds .bg-text {
+    margin-bottom: -80px;
+    left: -50px; }
+  /* line 176, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--leeds .cta-btn {
+    left: 0;
+    margin-top: 25px; }
+  /* line 181, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--leeds:before {
+    width: 310px;
+    height: 494px;
+    border: 2px solid #9013FE;
+    top: 240px;
+    left: -50px; }
+
+  /* line 192, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .result--london {
+    margin-top: 30px; }
+    /* line 194, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .result--london .bg-text {
+      margin-bottom: -90px; }
+    /* line 198, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .result--london .cta-btn {
+      left: 0;
+      margin-top: 25px; }
+    /* line 203, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+    .result--london:before {
+      width: 390px;
+      height: 330px;
+      border: 2px solid #50E3C2;
+      top: 390px;
+      left: 260px; }
+
+  /* line 213, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds-is-ace:before {
+    width: 310px;
+    height: 460px;
+    border: 2px solid #9013FE;
+    top: 70px;
+    left: 390px; }
+  /* line 220, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds-is-ace .bg-text {
+    margin-bottom: -75px; }
+  /* line 226, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .leeds-is-ace .box p {
+    font-size: 1.5rem;
+    margin-bottom: 10px; }
+
+  /* line 235, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .cash {
+    font-size: 4.5rem; }
+
+  /* line 239, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .quip {
+    padding: 121px 120px 150px 50px;
+    text-align: left;
+    position: relative;
+    left: 310px; }
+
+  /* line 247, /Users/russell/Documents/repos/LDSvLDN/source/css/_partials/_queries.scss */
+  .again .section-text {
+    text-align: left;
+    margin-bottom: 100px;
+    padding-left: 150px; } }
+/*------------------------------------*\
+	$IE HACKS AND FIXES
+\*------------------------------------*/

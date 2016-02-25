@@ -1,0 +1,66 @@
+
+/*------------------------------------*\
+	$TYPE
+\*------------------------------------*/
+
+/*--type variables--*/
+$base-font-size: 16;
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-weight: 400; 
+
+
+/* rem sizing function */
+@function findrem($base, $pixel){
+	@return $pixel / $base;
+}
+
+@mixin font-rempx ($value) {
+	font-size: findrem($base-font-size, $value)rem;
+	font-size: #{$value}px;
+}
+
+body{
+	color: $text-color;
+	@include font-rempx(16);
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	line-height: 1.5rem;
+}
+
+
+/*--- HEADINGS ---*/
+h1,.alpha{
+	@include font-rempx(36);
+	// line-height:;
+}
+h2,.beta{
+	@include font-rempx(30);
+	// line-height:;
+}
+h3,.gamma{
+	@include font-rempx(24);
+	// line-height:;
+}
+h4,.delta{
+	@include font-rempx(20);
+	// line-height:;
+}
+h5,.epsilon{
+	@include font-rempx(18);
+	// line-height:;
+}
+h6,.zeta{
+	@include font-rempx(16);
+	line-height:1.5em;
+}
+
+/*--- LINKS ---*/
+a:hover{
+	text-decoration:underline;
+}
+
+/*--- LISTS ---*/
+li > ul,
+li > ol{
+	margin-bottom:0;
+}
