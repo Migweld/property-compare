@@ -35,7 +35,9 @@ class CompareController extends Controller
 
         $searchresult = $searchmodel->createSearch($leeds, $london);
 
-    	return view('compare-results', compact('leeds', 'london', 'searchresult'));
+        $this->request->get('sale_or_rent') == 'rent' ? $rent = true : $rent = false;
+
+    	return view('compare-results', compact('leeds', 'london', 'searchresult', 'rent'));
     }
 
     public function retrieveSearch($id, Search $search)

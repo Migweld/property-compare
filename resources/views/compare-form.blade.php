@@ -6,28 +6,33 @@
 	<p>{{Session::get('message')}}</p>
 @endif
 
-<form action="/compare" method="POST">
-	<label for="bedrooms">Number of Bedrooms</label>
-	<select name="bedrooms" id="bedrooms">
-		<option value="1">One</option>
-		<option value="2">Two</option>
-		<option value="3">Three</option>
-		<option value="4">Four</option>
-		<option value="">Five</option>
-	</select>
+<span class='leeds bg-text purple'>Leeds</span>
 
-	<label for="property_type">Type of property</label>
-	<select name="property_type" id="property_type">
-		<option value="houses">House</option>
-		<option value="flats">Flat</option>
-	</select>
+<form action="/compare" method="POST" class="search-form">
+    <div class="box">
+        <select name="bedrooms" id="bedrooms" class="standard-select">
+            <option disabled='true' selected='true' value=''>Number of Bedrooms</option>
+            <option value="1">One Bedroom</option>
+            <option value="2">Two Bedrooms</option>
+            <option value="3">Three Bedrooms</option>
+            <option value="4">Four Bedrooms</option>
+            <option value="">Five Bedrooms</option>
+        </select>
 
-	<label for="sale_or_rent">Buy or Rent?</label>
-	<select name="sale_or_rent" id="sale_or_rent">
-		<option value="sale">Buy</option>
-		<option value="rent">Rent</option>
-	</select>
+        <select name="property_type" id="property_type" class="standard-select">
+            <option disabled='true' selected='true' value=''>Type of property</option>
+            <option value="houses">House</option>
+            <option value="flats">Flat</option>
+        </select>
 
-	<input type="submit" name="submit" value="Search" />
+        <select name="sale_or_rent" id="sale_or_rent" class="standard-select">
+            <option disabled='true' selected='true' value=''>Buy or Rent</option>
+            <option value="sale">Buy</option>
+            <option value="rent">Rent</option>
+        </select>
+    </div>
+    <input type="submit" name="submit" value="Search" class="cta-btn"/>
 </form>
+
+<span class='london bg-text mint'>London</span>
 @stop

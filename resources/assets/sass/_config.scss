@@ -1,0 +1,75 @@
+// @section Configuration Settings
+// Adjust colors, font stacks, breakpoints and sizing.
+//
+// Typographic Scale
+// (For math purposes. Actual font sizes in ems.)
+// 1px, 4px, 5px, 8px, 9px, 11px, 12px, 13px, 15px, 16px, 19px, 21px, 24px, 28px, 32px, 48px, 64px, 80px, 96px
+// line height: 1.5em on small screens, 1.5625em on big screens
+//
+
+// Colors
+$color-green: #377f31;
+$color-red: #880e14;
+$color-yellow: #dba909;
+
+$color-purple: #9013FE;
+$color-mint: #50E3C2;
+
+$color-primary: #0088cc;
+$color-black: #272727;
+$color-white: #ffffff;
+$color-code: #dd1144;
+
+$color-bg-grey: #F1F1F1;
+$color-gray-dark: #383838;
+$color-gray-light: #767676;
+
+$color-success: $color-green; // Green
+$color-danger: $color-red; // Red
+$color-warning: $color-yellow; // Yellow
+
+
+
+// Font Stacks
+$font-primary: "brandon-grotesque", "Helvetica Neue", Arial, sans-serif;
+$font-secondary: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+$font-monospace: Menlo, Monaco, "Courier New", monospace;
+
+
+// Breakpoints
+$bp-xsmall: 20em; //320px
+$bp-small: 30em; //480px
+$bp-medium: 40em; //640px
+$bp-large: 60em; // 960px
+$bp-xlarge: 80em; // 1280px
+
+
+// Sizing
+$font-base: 100%;
+$font-xlarge-screens: 125%;
+$spacing: 1.5625em;
+$container-max: 80em;
+$container-width: 88%;
+
+
+// Grid
+$grid-margins: 1.4%;
+$grid-sizes: ( // name: width
+	fourth: 25%,
+	third: 33.33333333333%,
+	half: 50%,
+	two-thirds: 66.666666666667%,
+	three-fourths: 75%,
+	full: 100%
+);
+$grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
+	($bp-xsmall, ".row-start-xsmall", false),
+	($bp-small, ".row-start-small", false),
+	($bp-medium, null, true)
+);
+
+
+// Icons
+$icons: ( // name, character, color
+	("logo", "e600", null),
+);
