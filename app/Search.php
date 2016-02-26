@@ -12,7 +12,7 @@ class Search extends Model
     {
     	$leedsJson = json_encode($leeds);
     	$londonJson = json_encode($london);
-    	$search = $this->create(['leeds' => $leedsJson, 'london' => $londonJson, 'rent' => $rent]);
+    	$search = $this->create(['leeds' => $leedsJson, 'london' => $londonJson, 'sale_or_rent' => $rent]);
     	return $search->id;
     }
 

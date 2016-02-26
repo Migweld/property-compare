@@ -50,7 +50,7 @@ class CompareController extends Controller
             $leeds = json_decode($result->leeds);
             $london = json_decode($result->london);
             $searchresult = $result->id;
-            $rent = $result->sale_or_rent;
+            $result->sale_or_rent == 'rent' ? $rent = true : $rent = false;
 
             return view('compare-results', compact('leeds', 'london', 'searchresult', 'rent'));
         }
