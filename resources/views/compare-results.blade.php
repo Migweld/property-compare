@@ -62,6 +62,15 @@
                 p/w
             @endif
         </div>
+        <?php
+            $string = urlencode("I'd save £" .number_format($london->price - $leeds->price). " by living in Leeds instead of London. Hand me that flat cap.");
+            $link = "http://leedsvlondon.com/result/".$searchresult;
+            $hashtags = 'LDSvLDN';
+
+        ?>
+        <a class="twitter-share-button"
+           href="https://twitter.com/intent/tweet?text={{$string}}&url={{$link}}&hashtags={{$hashtags}}">
+            Tweet</a>
     </div>
     @endif
     <p class='quip'>

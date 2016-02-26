@@ -43,5 +43,21 @@ namespace :deploy do
       # end
     end
   end
+end
 
+
+namespace :laravel do
+
+    desc "Setup Laravel folder permissions"
+    task :permissions do
+        on roles(:app), in: :sequence, wait: 5 do
+            within release_path  do
+                execute :chmod, "u+x artisan"
+                execute :chmod, "-R 777 storage/framework/cache"
+                execute :chmod, "-R 777 storage/framework/sessions"
+                execute :chmod, "-R 777 storage/framework/views"
+                execute :chmod, "-R 777 storage/logs"
+            end
+        end
+    end
 end
