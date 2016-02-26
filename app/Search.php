@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Search extends Model
 {
-    protected $fillable = ['leeds', 'london'];
+    protected $fillable = ['leeds', 'london', 'sale_or_rent'];
 
     public function createSearch($leeds, $london, $rent)
     {
