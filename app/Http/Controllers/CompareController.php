@@ -33,7 +33,7 @@ class CompareController extends Controller
             return view('compare-form')->with('message', 'Could not retrieve any listings. We may have hit the API rate limit');
         }
 
-        $searchresult = $searchmodel->createSearch($leeds, $london);
+        $searchresult = $searchmodel->createSearch($leeds, $london, $this->request->get('sale_or_rent'));
 
         $this->request->get('sale_or_rent') == 'rent' ? $rent = true : $rent = false;
 
@@ -50,6 +50,7 @@ class CompareController extends Controller
             $leeds = json_decode($result->leeds);
             $london = json_decode($result->london);
             $searchresult = $result->id;
+            $rent = $result->sale_or_rent;
 
             return view('compare-results', compact('leeds', 'london', 'searchresult'));
         }
