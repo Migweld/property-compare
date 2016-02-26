@@ -26,24 +26,24 @@ class ZooplaSearch implements SearchAPIContract
             break;
         }
 
-        $response = $this->caller->get('property_listings.json', [
-            'query' => [
-                'api_key'           => $this->api,
-                'radius'            => $radius,
-                'area'              => $town,
-                'minimum_price'     => $minPrice,
-                'listing_status'    => $saleRent,
-                'minimum_beds'      => $bedrooms,
-                'maximum_beds'      => $bedrooms,
-                'property_type'     => $propertyType,
-                'page_size'         => 100
-            ]
-        ]);
-
-        if($response->getStatusCode() == 200){
-            return json_decode($response->getBody()->getContents());
-        } else {
+        try {
+            $response = $this->caller->get('property_listings.json', [
+                'query' => [
+                    'api_key'           => $this->api,
+                    'radius'            => $radius,
+                    'area'              => $town,
+                    'minimum_price'     => $minPrice,
+                    'listing_status'    => $saleRent,
+                    'minimum_beds'      => $bedrooms,
+                    'maximum_beds'      => $bedrooms,
+                    'property_type'     => $propertyType,
+                    'page_size'         => 100
+                ]
+            ]);
+        } catch(\GuzzleHttp\Exception\ClientException $e) {
             return false;
         }
+
+        return json_decode($response->getBody()->getContents());
     }
 }
