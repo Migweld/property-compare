@@ -52,6 +52,7 @@ namespace :laravel do
     task :permissions do
         on roles(:app), in: :sequence, wait: 5 do
             within release_path  do
+                execute :chown, "-R deploy:www-data *"
                 execute :chmod, "u+x artisan"
                 execute :chmod, "-R 777 storage/framework/cache"
                 execute :chmod, "-R 777 storage/framework/sessions"
