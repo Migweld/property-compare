@@ -8,11 +8,11 @@ class Search extends Model
 {
     protected $fillable = ['leeds', 'london'];
 
-    public function createSearch($leeds, $london)
+    public function createSearch($leeds, $london, $rent)
     {
     	$leedsJson = json_encode($leeds);
     	$londonJson = json_encode($london);
-    	$search = $this->create(['leeds' => $leedsJson, 'london' => $londonJson]);
+    	$search = $this->create(['leeds' => $leedsJson, 'london' => $londonJson, 'rent' => $rent]);
     	return $search->id;
     }
 
