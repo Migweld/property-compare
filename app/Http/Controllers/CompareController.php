@@ -52,7 +52,7 @@ class CompareController extends Controller
             $searchresult = $result->id;
             $rent = $result->sale_or_rent;
 
-            return view('compare-results', compact('leeds', 'london', 'searchresult'));
+            return view('compare-results', compact('leeds', 'london', 'searchresult', 'rent'));
         }
     }
 }
