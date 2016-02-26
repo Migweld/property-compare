@@ -7,7 +7,7 @@
   <meta charset='utf-8'>
   <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
   <title>Leeds Vs. London - London be pricey, yo</title>
-  <meta content="Leeds is great and so, I'm told is London but where would you live? Allow us to give you a hand." name='description'>
+  <meta content="Leeds is great and so, I'm told, is London but where would you live? Allow us to give you a hand." name='description'>
   <meta content='width=device-width' name='viewport'>
   <script src="{{asset('/js/vendor/modernizr-2.6.1.min.js')}}"></script>
   <link href="{{asset('/css/styles.css')}}" rel="stylesheet" />
