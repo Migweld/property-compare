@@ -31,9 +31,9 @@
     </div>
     <footer>
         <ul>
-            {{--<li>
-                <a href='#'>About</a>
-            </li>--}}
+            <li>
+                <a href='{{url('about')}}'>About</a>
+            </li>
             <li>
                 Made for fun in Leeds by
                 <a href='https://flodesign.co.uk/'>Flo Design</a>
