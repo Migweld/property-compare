@@ -2,8 +2,8 @@
 
 @section('content')
 
-@if(Session::get('message'))
-	<p>{{Session::get('message')}}</p>
+@if(isset($message) && $message != '')
+	<p>{{$message}}</p>
 @endif
 
 <span class='leeds bg-text purple'>Leeds</span>

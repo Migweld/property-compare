@@ -40,7 +40,10 @@ class ZooplaSearch implements SearchAPIContract
                     'page_size'         => 100
                 ]
             ]);
+
         } catch(\GuzzleHttp\Exception\ClientException $e) {
+            return false;
+        } catch(\GuzzleHttp\Exception\ConnectException $e) {
             return false;
         }
 
