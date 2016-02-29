@@ -26,8 +26,9 @@ class CompareController extends Controller
 
     public function compare(PropertySearch $search, Search $searchmodel)
     {
+        $londonTowns = ['Bromley', 'Enfield', 'Sutton', 'Croydon', 'Hillingdon', 'Barnet', 'Harrow', 'Epping Forest'];
     	$leeds = $search->doSearch($this->request->all(), 'Leeds', 2);
-        $london = $search->doSearch($this->request->all(), 'London', 5);
+        $london = $search->doSearch($this->request->all(), array_rand($londonTowns).', London', 3);
 
         if($leeds == false || $london == false){
             return view('compare-form')->with('message', 'Could not retrieve any listings. We may have hit the API rate limit');
