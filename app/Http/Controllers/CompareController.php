@@ -28,7 +28,7 @@ class CompareController extends Controller
     {
         $londonTowns = ['Bromley', 'Enfield', 'Sutton', 'Croydon', 'Hillingdon', 'Barnet', 'Harrow', 'Epping Forest'];
     	$leeds = $search->doSearch($this->request->all(), 'Leeds', 2);
-        $london = $search->doSearch($this->request->all(), array_rand($londonTowns).', London', 3);
+        $london = $search->doSearch($this->request->all(), array_rand($londonTowns).', London', 2);
 
         if($leeds == false || $london == false){
             return view('compare-form')->with('message', 'Could not retrieve any listings. We may have hit the API rate limit');
