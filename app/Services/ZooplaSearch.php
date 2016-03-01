@@ -41,9 +41,7 @@ class ZooplaSearch implements SearchAPIContract
                 ]
             ]);
 
-        } catch(\GuzzleHttp\Exception\ClientException $e) {
-            return false;
-        } catch(\GuzzleHttp\Exception\ConnectException $e) {
+        } catch(\Exception $e) {
             return false;
         }
 
